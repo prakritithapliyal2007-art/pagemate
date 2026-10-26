@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PageMate — nearby assignment writers, priced per page</title>
+  <meta name="description" content="PageMate is a student-to-student marketplace. Browse verified writing samples, compare per-page prices, and get assignments written or typed by someone in your own neighbourhood." />
+  <meta name="theme-color" content="#4f46e5" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%234f46e5'/%3E%3Cpath d='M20 44c0-14 8-24 24-24-1 15-9 24-24 24Z' fill='%23fff'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="PageMate home">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="18" fill="currentColor" />
+          <path d="M19 45c0-15 9-26 26-26-1 16-10 26-26 26Z" fill="#fff" />
+          <path d="M19 51c8-12 18-20 30-24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 6" />
+        </svg>
+        <span class="brand-word">pagemate<span class="brand-dot">.</span></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#writers">Browse writers</a>
+        <a href="#requests">Open requests</a>
+        <a href="#how">How it works</a>
+        <a href="#join">Write with us</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost btn-sm" type="button" data-scroll="#join">I write pages</button>
+        <button class="btn btn-primary btn-sm" type="button" data-open-request>Post a request</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse-dot"></span> Student-to-student · Delhi NCR</p>
+          <h1>Pages written by someone <em>a short walk</em> away.</h1>
+          <p class="lede">
+            Need an assignment typed, handwritten or cleaned up? Compare real writing samples and
+            per-page prices from writers in your own neighbourhood — then collect it in person,
+            no courier, no waiting.
+          </p>
+
+          <form class="search-card" id="searchForm" role="search">
+            <div class="search-field">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M16 16l4.5 4.5" /></svg>
+              <label class="sr-only" for="searchInput">Subject or course</label>
+              <input id="searchInput" type="search" placeholder="Subject or course — e.g. thermodynamics" autocomplete="off" />
+            </div>
+            <div class="search-field search-area">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+              <label class="sr-only" for="heroArea">Your area</label>
+              <select id="heroArea"></select>
+            </div>
+            <button class="btn btn-primary" type="submit">Find writers</button>
+          </form>
+
+          <div class="hero-meta">
+            <button class="link-btn" id="geoBtn" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><circle cx="12" cy="12" r="8" /><path d="M12 1v3M12 20v3M1 12h3M20 12h3" /></svg>
+              Use my location
+            </button>
+            <span class="geo-status" id="geoStatus" role="status"></span>
+          </div>
+
+          <ul class="trust-row">
+            <li><span class="tick" aria-hidden="true">✓</span> Verified handwriting samples</li>
+            <li><span class="tick" aria-hidden="true">✓</span> One flat price per page</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Pickup within your radius</li>
+          </ul>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="map-board">
+            <span class="ring ring-1"></span>
+            <span class="ring ring-2"></span>
+            <span class="ring ring-3"></span>
+            <span class="ring-label ring-label-1">2 km</span>
+            <span class="ring-label ring-label-2">5 km</span>
+            <span class="map-pin pin-1" data-hero-pin><i></i>Rohan · 0.6 km</span>
+            <span class="map-pin pin-2" data-hero-pin><i></i>Kavya · 4.7 km</span>
+            <span class="map-pin pin-3" data-hero-pin><i></i>Simran · 5.9 km</span>
+            <span class="me-pin">DTU gate</span>
+          </div>
+
+          <article class="match-card">
+            <header class="match-head">
+              <span class="avatar avatar-sm" style="--av:#e0e7ff;--av-ink:#3730a3">RM</span>
+              <div>
+                <p class="match-name">Rohan Mehta <span class="verified" title="Sample verified">✓</span></p>
+                <p class="match-sub">DTU · Mechanical</p>
+              </div>
+              <span class="rating-pill">★ 4.8</span>
+            </header>
+            <div class="sample sample-sm">
+              <span class="sample-tag">Sample page</span>
+              Entropy is not a thing a system contains — it is a way of counting the arrangements it could take. Heat flows because one arrangement is far more likely…
+            </div>
+            <dl class="match-stats">
+              <div><dt>Per page</dt><dd data-hero-price>₹90</dd></div>
+              <div><dt>Distance</dt><dd data-hero-distance>0.6 km</dd></div>
+              <div><dt>Ready in</dt><dd data-hero-ready>36 hr</dd></div>
+            </dl>
+            <p class="match-delivery" data-hero-delivery>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V9l6-4 6 4v10M10 19v-5h4v5" /></svg>
+              DTU main gate · 2 min walk
+            </p>
+          </article>
+
+          <div class="float-chip float-chip-top">
+            <span class="chip-dot"></span> <span id="heroNearby">5 writers within 5 km</span>
+          </div>
+          <div class="float-chip float-chip-bottom">
+            <strong id="heroTotal">₹1,080</strong> for 12 handwritten pages
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <div class="wrap">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">How it works</p>
+            <h2>Two sides of the same desk.</h2>
+            <p class="lede">One place for people who need pages and people who write them — matched by subject, price and how far away they are.</p>
+          </div>
+        </header>
+
+        <div class="role-tabs" role="tablist" aria-label="Choose your side">
+          <button class="role-tab is-active" id="tab-buyer" role="tab" aria-selected="true" aria-controls="panel-buyer" data-role="buyer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z" /><path d="M14 3v4h4M10 12h5M10 16h5" /></svg>
+            I need work done
+          </button>
+          <button class="role-tab" id="tab-writer" role="tab" aria-selected="false" aria-controls="panel-writer" data-role="writer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l4-1 11-11-3-3L5 16z" /><path d="M14 5l3 3" /></svg>
+            I write work
+          </button>
+        </div>
+
+        <div class="role-panel is-active" id="panel-buyer" role="tabpanel" aria-labelledby="tab-buyer">
+          <ol class="step-grid">
+            <li class="step-card">
+              <span class="step-no">01</span>
+              <h3>Post your pages</h3>
+              <p>Subject, page count, deadline and delivery mode. Your area is used only to measure distance — never shown as an address.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-no">02</span>
+              <h3>Compare nearby writers</h3>
+              <p>Read verified samples, check ratings and see one flat price per page. Sorted nearest first, so handover is a short trip.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-no">03</span>
+              <h3>Meet, check, pay</h3>
+              <p>Collect from a metro gate, campus library or doorstep. Read the pages first, then pay the agreed total on handover.</p>
+            </li>
+          </ol>
+          <div class="panel-cta">
+            <p>Have a deadline this week?</p>
+            <button class="btn btn-primary" type="button" data-open-request>Post a request — it's free</button>
+          </div>
+        </div>
+
+        <div class="role-panel" id="panel-writer" role="tabpanel" aria-labelledby="tab-writer" hidden>
+          <ol class="step-grid">
+            <li class="step-card">
+              <span class="step-no">01</span>
+              <h3>Publish three sample pages</h3>
+              <p>Upload or paste a sample of your actual writing, set your price per page and the subjects you're confident in.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-no">02</span>
+              <h3>Get matched nearby</h3>
+              <p>Buyers inside your chosen radius see you first. No bidding wars, no ₹20-a-page race to the bottom — you set the rate.</p>
+            </li>
+            <li class="step-card">
+              <span class="step-no">03</span>
+              <h3>Deliver and get paid</h3>
+              <p>Hand over in person or drop at a pickup point nearby. Payment on delivery, plus a review that builds your next match.</p>
+            </li>
+          </ol>
+          <div class="panel-cta">
+            <p>Good handwriting and a free evening?</p>
+            <button class="btn btn-primary" type="button" data-scroll="#join">List your writing</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Browse writers -->
+    <section class="section section-mint" id="writers">
+      <div class="wrap">
+        <header class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">Browse writers</p>
+            <h2>Nearest pens first.</h2>
+            <p class="lede">Sample pages and prices are set by the writers themselves. Distance is measured from the area you choose.</p>
+          </div>
+          <p class="count-pill" id="resultCount" aria-live="polite">—</p>
+        </header>
+
+        <div class="filter-panel">
+          <div class="chip-row" id="subjectChips" role="group" aria-label="Filter by subject"></div>
+          <div class="filter-controls">
+            <label class="control">
+              <span>Delivery</span>
+              <select id="modeFilter">
+                <option value="any">Any mode</option>
+                <option value="Handwritten">Handwritten</option>
+                <option value="Typed">Typed</option>
+              </select>
+            </label>
+            <label class="control">
+              <span>Sort by</span>
+              <select id="sortFilter">
+                <option value="distance">Nearest first</option>
+                <option value="price">Price: low to high</option>
+                <option value="rating">Highest rated</option>
+              </select>
+            </label>
+            <label class="control control-range">
+              <span>Within <output id="radiusOut" for="radiusFilter">5 km</output></span>
+              <input id="radiusFilter" type="range" min="1" max="25" step="1" value="5" />
+            </label>
+          </div>
+        </div>
+
+        <div class="writer-grid" id="writerGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <h3>No writers inside this radius.</h3>
+          <p>Widen the distance or clear a filter — good writers are often one metro stop further out.</p>
+          <button class="btn btn-ghost" type="button" id="resetFilters">Reset filters</button>
+        </div>
+
+        <p class="fineprint">Distances are straight-line estimates, not road distances. Demo listings live in this browser only.</p>
+      </div>
+    </section>
+
+    <!-- Open requests -->
+    <section class="section" id="requests">
+      <div class="wrap">
+        <header class="section-head section-head-row">
+          <div>
+            <p class="eyebrow">Open requests</p>
+            <h2>Briefs waiting for a pen.</h2>
+            <p class="lede">These buyers are looking for a writer right now. Send an offer with your sample and price per page.</p>
+          </div>
+          <button class="btn btn-ghost" type="button" data-open-request>Post your own</button>
+        </header>
+        <div class="request-grid" id="requestGrid"></div>
+      </div>
+    </section>
+
+    <!-- Join as writer -->
+    <section class="section section-mint" id="join">
+      <div class="wrap join-grid">
+        <div class="join-copy">
+          <p class="eyebrow">Write with PageMate</p>
+          <h2>Your handwriting is a shopfront.</h2>
+          <p class="lede">
+            Publish a sample, set your rate and choose how far you're willing to travel.
+            Buyers nearby see you first — and you never share an exact address, only a pickup point.
+          </p>
+          <ul class="check-list">
+            <li>Set your own price per page — no bidding</li>
+            <li>Choose a delivery radius from 1 to 25 km</li>
+            <li>Handwritten, typed, or both</li>
+            <li>Payment on handover, review after every order</li>
+          </ul>
+          <div class="join-note">
+            <span class="big-num" id="avgRate">₹82</span>
+            <span>is the median rate per page across the writers listed here.</span>
+          </div>
+        </div>
+
+        <form class="panel-form" id="listingForm" novalidate>
+          <div class="panel-form-head">
+            <h3>Create a demo listing</h3>
+            <p>Nothing leaves your browser. It appears in the grid above so you can see how matching works.</p>
+          </div>
+          <div class="form-grid">
+            <label class="field">
+              <span>Your name</span>
+              <input name="name" required maxlength="40" placeholder="e.g. Ishaan Kapoor" />
+            </label>
+            <label class="field">
+              <span>College</span>
+              <input name="college" required maxlength="50" placeholder="e.g. DTU, Mechanical" />
+            </label>
+            <label class="field">
+              <span>Subjects</span>
+              <input name="subjects" required maxlength="60" placeholder="Thermodynamics, Maths" />
+            </label>
+            <label class="field">
+              <span>Locality</span>
+              <select name="area" id="listingArea"></select>
+            </label>
+            <label class="field">
+              <span>Writing mode</span>
+              <select name="mode">
+                <option>Handwritten</option>
+                <option>Typed</option>
+                <option>Handwritten &amp; typed</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Price per page (₹)</span>
+              <input name="price" type="number" min="15" max="600" step="5" required placeholder="75" />
+            </label>
+            <label class="field field-full">
+              <span>A sample of your writing</span>
+              <textarea name="sample" rows="3" required maxlength="360" placeholder="Paste two or three lines of your actual writing — the way a buyer would see it on the page."></textarea>
+            </label>
+          </div>
+          <div class="panel-form-foot">
+            <button class="btn btn-primary" type="submit">Publish demo listing</button>
+            <button class="link-btn" type="button" id="removeListing" hidden>Remove my listing</button>
+          </div>
+          <p class="fineprint">Demo only — no upload, no account, no payment. Use the clear buttons below to reset.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Why nearby -->
+    <section class="section" id="nearby">
+      <div class="wrap">
+        <header class="section-head">
+          <div>
+            <p class="eyebrow">Why nearby matters</p>
+            <h2>The last kilometre is the whole point.</h2>
+            <p class="lede">A typed PDF can travel anywhere. A handwritten record, a printed report or a lab file can't — so PageMate ranks people by how easily you can actually collect the pages.</p>
+          </div>
+        </header>
+        <div class="nearby-grid">
+          <article class="nearby-card">
+            <span class="nearby-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+            </span>
+            <h3>Matched from your area</h3>
+            <p>Pick a locality or share a rough location. Writers inside your radius appear first, with straight-line distance shown upfront.</p>
+          </article>
+          <article class="nearby-card">
+            <span class="nearby-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V9l6-4 6 4v10M10 19v-5h4v5" /></svg>
+            </span>
+            <h3>Public pickup points</h3>
+            <p>Metro gates, campus libraries and stationery shops instead of home addresses. Both sides see the same meeting spot.</p>
+          </article>
+          <article class="nearby-card">
+            <span class="nearby-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" /></svg>
+            </span>
+            <h3>Same-day handover</h3>
+            <p>Most listings inside 3 km can be handed over the same evening, which is what saves you when the deadline is tomorrow.</p>
+          </article>
+        </div>
+        <div class="safety-band">
+          <div>
+            <h3>Written work, honest limits</h3>
+            <p>PageMate is built for drafts, notes, formatting, proofreading and reference material. Whatever you order, the submitted work must still follow your college's academic-integrity policy — that part is yours.</p>
+          </div>
+          <ul class="safety-list">
+            <li>Verified samples before you pay</li>
+            <li>No full advance payment</li>
+            <li>Report &amp; block from any listing</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="section cta-section">
+      <div class="wrap">
+        <div class="cta-band">
+          <div>
+            <p class="eyebrow eyebrow-light">Ready when you are</p>
+            <h2>Your pages are one street over.</h2>
+            <p>Post what you need and see who's within walking distance — or put your own handwriting to work this week.</p>
+          </div>
+          <div class="cta-actions">
+            <button class="btn btn-light" type="button" data-open-request>Post a request</button>
+            <button class="btn btn-outline-light" type="button" data-scroll="#join">Become a writer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand brand-footer" href="#top" aria-label="PageMate home">
+          <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="18" fill="currentColor" />
+            <path d="M19 45c0-15 9-26 26-26-1 16-10 26-26 26Z" fill="#1e1a3c" />
+          </svg>
+          <span class="brand-word">pagemate<span class="brand-dot">.</span></span>
+        </a>
+        <p>A student-to-student marketplace for assignments, notes and handwritten work — matched by subject, price and distance.</p>
+        <p class="footer-fine">Front-end prototype. Listings, distances, offers and requests are demo data stored in this browser.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#writers">Browse writers</a>
+        <a href="#requests">Open requests</a>
+        <a href="#how">How it works</a>
+        <a href="#nearby">Why nearby</a>
+      </div>
+      <div class="footer-col">
+        <h4>Writers</h4>
+        <a href="#join">Create a listing</a>
+        <a href="#join">Pricing per page</a>
+        <a href="#how">Sample verification</a>
+      </div>
+      <div class="footer-col">
+        <h4>Trust</h4>
+        <a href="#nearby">Safety &amp; pickup</a>
+        <a href="#nearby">Academic integrity</a>
+        <button class="link-btn footer-reset" type="button" id="resetDemo">Reset demo data</button>
+      </div>
+    </div>
+    <div class="wrap footer-base">
+      <p>© <span id="year">2026</span> PageMate · Delhi NCR prototype</p>
+      <p>Indigo, white, and the walk to the metro.</p>
+    </div>
+  </footer>
+
+  <!-- Request dialog -->
+  <dialog class="modal" id="requestDialog" aria-labelledby="requestTitle">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow" id="requestStepLabel">Step 1 of 2</p>
+        <h2 id="requestTitle">What do you need written?</h2>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close request form">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
+    <div class="modal-body" id="requestStepOne">
+      <form id="requestForm" novalidate>
+        <div class="form-grid">
+          <label class="field field-full">
+            <span>Subject or course</span>
+            <input name="subject" required maxlength="70" placeholder="e.g. Thermodynamics — 5 numericals" />
+          </label>
+          <label class="field">
+            <span>Pages needed</span>
+            <input name="pages" type="number" min="1" max="200" value="10" required />
+          </label>
+          <label class="field">
+            <span>Deadline</span>
+            <input name="deadline" type="date" required />
+          </label>
+          <label class="field">
+            <span>Delivery mode</span>
+            <select name="mode">
+              <option>Handwritten</option>
+              <option>Typed</option>
+              <option>Either is fine</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Your area</span>
+            <select name="area" id="requestArea"></select>
+          </label>
+          <label class="field">
+            <span>Budget per page (₹)</span>
+            <input name="budget" type="number" min="15" max="600" step="5" placeholder="80" />
+          </label>
+          <label class="field">
+            <span>Pickup point</span>
+            <select name="pickup">
+              <option>Rohini West metro gate 2</option>
+              <option>DTU main library steps</option>
+              <option>Campus stationery shop</option>
+              <option>Any metro station on my line</option>
+            </select>
+          </label>
+          <label class="field field-full">
+            <span>Anything the writer should know</span>
+            <textarea name="notes" rows="3" maxlength="400" placeholder="Formatting, referencing style, ruled or blank pages, how neat it needs to be…"></textarea>
+          </label>
+          <label class="field field-full">
+            <span>Reference material <small>(demo — no file is uploaded)</small></span>
+            <input name="reference" type="file" accept="image/*,.pdf,.doc,.docx" />
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit">See nearby matches</button>
+          <p class="fineprint">You'll see writers ranked by distance before anything is sent.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal-body" id="requestStepTwo" hidden>
+      <div class="match-summary" id="matchSummary"></div>
+      <div class="match-list" id="matchList"></div>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" type="button" id="backToRequest">Edit request</button>
+        <button class="btn btn-primary" type="button" id="confirmRequest" disabled>Send request to selected writer</button>
+      </div>
+      <p class="fineprint" id="matchNote">Pick a writer to continue.</p>
+    </div>
+  </dialog>
+
+  <!-- Offer dialog -->
+  <dialog class="modal modal-sm" id="offerDialog" aria-labelledby="offerTitle">
+    <div class="modal-head">
+      <div>
+        <p class="eyebrow">Send an offer</p>
+        <h2 id="offerTitle">Offer your pen</h2>
+      </div>
+      <button class="icon-btn" type="button" data-close aria-label="Close offer form">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="offer-brief" id="offerBrief"></div>
+      <form id="offerForm" novalidate>
+        <div class="form-grid">
+          <label class="field">
+            <span>Your name</span>
+            <input name="name" required maxlength="40" placeholder="Your name" />
+          </label>
+          <label class="field">
+            <span>Your rate per page (₹)</span>
+            <input name="price" type="number" min="15" max="600" step="5" required placeholder="75" />
+          </label>
+          <label class="field field-full">
+            <span>Two lines about how you'd approach it</span>
+            <textarea name="message" rows="3" maxlength="300" placeholder="I've done this paper before — I can start tonight and hand over at the metro on Friday."></textarea>
+          </label>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit">Send demo offer</button>
+          <p class="fineprint">Demo only: the offer is saved in this browser, not sent anywhere.</p>
+        </div>
+      </form>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
